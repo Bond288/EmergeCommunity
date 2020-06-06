@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Emerge community</string>
     <string name="fail_message">Упс. Что-то пошло не так</string>
+    <string name="facebook_login">Логин через Facebook</string>
+    <string name="ticket_scanner">Скинировать билет</string>
+    <string name="login_to_conference">Залогиниться на наше супер мероприятие</string>
+    <string name="ticket_not_recognize">Билет не распознан</string>
+    <string name="target_camera_to_ticket">Наведите камеру на билет пожалуйста</string>
+    <string name="ticket_scanner_started">Сканер билета запущен</string>
 </resources>

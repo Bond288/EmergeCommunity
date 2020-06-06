@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/fragment"
         android:name="com.glootie.networking.startup.ui.StartupListFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/background_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_login_bg"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/facebook_login"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="140dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:drawablePadding="20dp"
+            android:layout_gravity="center"
+            android:onClick="facebookLogin"
+            android:text="@string/facebook_login"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:background="@drawable/ic_background_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/scanner"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="20dp"
+            android:drawablePadding="-8dp"
+            android:layout_gravity="center"
+            android:onClick="scanTicket"
+            android:text="@string/ticket_scanner"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_qr_code"
+            android:background="@drawable/ic_background_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
