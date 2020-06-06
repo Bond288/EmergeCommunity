@@ -3,9 +3,7 @@ package com.glootie.networking
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import com.glootie.networking.base.BaseActivity
-import com.glootie.networking.qr.TicketScannerActivity
 
 
 class MainActivity : BaseActivity() {
@@ -20,14 +18,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-    }
-
-    fun scanTicket(view: View) {
-        startActivityForResult(Intent(this@MainActivity, TicketScannerActivity::class.java), SCAN_TICKET_RESULT_CODE)
-    }
-
-    fun facebookLogin(view: View) {
-        // TODO: 06.06.2020 facebook startActivityForResult with FACEBOOK_LOGIN_RESULT_CODE
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
