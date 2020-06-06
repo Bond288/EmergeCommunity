@@ -7,6 +7,6 @@
     <string name="ticket_not_recognize">Билет не распознан</string>
     <string name="target_camera_to_ticket">Наведите камеру на билет пожалуйста</string>
     <string name="ticket_scanner_started">Сканер билета запущен</string>
-    <string name="login_title">Инвестиции по любви</string>
+    <string name="login_title">Инвестиции \nпо любви</string>
     <string name="login_description">Общайтесь, встречайтесь, договаривайтесь. Завершение конференции прекрасное время чтобы себя показать и на других посмотреть.</string>
 </resources>
