@@ -1,6 +1,5 @@
 package com.glootie.networking.startup.item.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -37,11 +36,14 @@ class StartupFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val startupInfo: StartupInfo = arguments?.getSerializable(STARTUP_EXTRA) as? StartupInfo ?: return
+        val startupInfo = arguments?.getSerializable(STARTUP_EXTRA) as? StartupInfo ?: return
         view.startup_name.text = startupInfo.title
         view.startup_description.text = Html.fromHtml(startupInfo.description)
         BottomSheetBehavior.from(view.bottom_sheet_panel)
         view.root.moveEvent.observe(this::getLifecycle, ::onEvent)
+        val player = VideoPlayer(view.context, lifecycle)
+        view.scene.useController = false
+        player.setDataSource(view.scene!!, startupInfo)
     }
 
     private fun onEvent(event: StartupLayout.MoveEvent) {
