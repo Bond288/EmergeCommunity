@@ -24,11 +24,9 @@ import javax.security.auth.callback.Callback
 
 class TicketScannerFragment : BaseFragment() {
 
-    var surfaceView: SurfaceView? = null
     private var barcodeDetector: BarcodeDetector? = null
     private var cameraSource: CameraSource? = null
     private val REQUEST_CAMERA_PERMISSION = 201
-    var btnAction: Button? = null
     var intentData = ""
     var isUrl = false
 
@@ -45,7 +43,7 @@ class TicketScannerFragment : BaseFragment() {
     }
 
     private fun initViews() {
-        txtBarcodeValue.setOnClickListener {
+        button_action.setOnClickListener {
             if (intentData.isNotEmpty()) {
                 if (isUrl)
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(intentData)))
@@ -66,15 +64,15 @@ class TicketScannerFragment : BaseFragment() {
             .setRequestedPreviewSize(1920, 1080)
             .setAutoFocusEnabled(true) //you should add this feature
             .build()
-        surfaceView?.holder?.addCallback(object : Callback, SurfaceHolder.Callback {
+        surface_view?.holder?.addCallback(object : Callback, SurfaceHolder.Callback {
             override fun surfaceCreated(holder: SurfaceHolder?) {
                 try {
                     if (ActivityCompat.checkSelfPermission(
-                            activity!!,
+                            activity!!.applicationContext,
                             Manifest.permission.CAMERA
                         ) == PackageManager.PERMISSION_GRANTED
                     ) {
-                        cameraSource!!.start(surfaceView?.holder)
+                        cameraSource!!.start(surface_view?.holder)
                     } else {
                         ActivityCompat.requestPermissions(
                             activity!!,
@@ -103,7 +101,7 @@ class TicketScannerFragment : BaseFragment() {
             setProcessor(object : Detector.Processor<Barcode?> {
                 override fun release() {
                     Toast.makeText(
-                        activity!!.applicationContext,
+                        activity,
                         "To prevent memory leaks barcode scanner has been stopped",
                         Toast.LENGTH_SHORT
                     ).show()
@@ -112,17 +110,17 @@ class TicketScannerFragment : BaseFragment() {
                 override fun receiveDetections(detections: Detector.Detections<Barcode?>) {
                     val barcodes: SparseArray<Barcode?>? = detections.getDetectedItems()
                     if (barcodes?.size() != 0) {
-                        txtBarcodeValue!!.post {
+                        barcode_value!!.post {
                             if (barcodes?.valueAt(0)?.url != null) {
                                 isUrl = true
-                                btnAction!!.text = getString(R.string.login_to_conference)
+                                button_action!!.text = getString(R.string.login_to_conference)
                                 intentData = barcodes.valueAt(0)?.displayValue.toString()
-                                txtBarcodeValue!!.text = intentData
+                                barcode_value!!.text = intentData
                             } else {
                                 isUrl = false
-                                btnAction!!.text = getString(R.string.ticket_not_recognize)
+                                button_action!!.text = getString(R.string.ticket_not_recognize)
                                 intentData = barcodes?.valueAt(0)?.displayValue.toString()
-                                txtBarcodeValue!!.text = intentData
+                                barcode_value!!.text = intentData
                             }
                         }
                     }
