@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Emerge community</string>
+
+    <string name="facebook_app_id">2556089671372960</string>
+    <string name="fb_login_protocol_scheme">fb2556089671372960</string>
     <string name="fail_message">Упс. Что-то пошло не так</string>
     <string name="facebook_login">Логин через Facebook</string>
     <string name="ticket_scanner">Скинировать билет</string>

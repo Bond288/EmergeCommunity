@@ -1,91 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_screen">
+    tools:context=".MainActivity">
 
     <fragment
-        android:id="@+id/fragment"
-        android:name="com.glootie.networking.startup.ui.StartupListFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <LinearLayout
-        android:id="@+id/background_image_view"
+        android:id="@+id/sss"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/background_login"
-        android:orientation="vertical"
+        android:name="com.glootie.networking.auth.ui.AuthFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <TextView
-            android:id="@+id/login_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="36dp"
-            android:text="@string/login_title"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="22sp" />
-
-        <TextView
-            android:id="@+id/login_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="30dp"
-            android:text="@string/login_description"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/facebook_login"
-            android:layout_width="240dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/background_facebook_button"
-            android:drawableLeft="@drawable/ic_facebook"
-            android:drawablePadding="20dp"
-            android:onClick="facebookLogin"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/facebook_login"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/scanner"
-            android:layout_width="240dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/background_ticket_scan_button"
-            android:drawableLeft="@drawable/ic_qr_code"
-            android:drawablePadding="-8dp"
-            android:onClick="scanTicket"
-            android:paddingLeft="16dp"
-            android:paddingRight="20dp"
-            android:text="@string/ticket_scanner"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
