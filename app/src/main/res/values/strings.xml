@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Emerge community</string>
+    <string name="fail_message">Упс. Что-то пошло не так</string>
 </resources>
