@@ -1,7 +1,6 @@
 package com.glootie.networking.base
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.glootie.networking.base.mvvm.BaseViewModel
@@ -14,8 +13,8 @@ open class BaseActivity : AppCompatActivity() {
 
     lateinit var scope: Scope
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         scope = Toothpick.openScopes(application, this)
             .installModules(*getModules())
     }

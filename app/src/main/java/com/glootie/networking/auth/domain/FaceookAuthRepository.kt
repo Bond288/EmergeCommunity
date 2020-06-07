@@ -1,6 +1,6 @@
 package com.glootie.networking.auth.domain
 
-interface AuthRepository {
+interface FacebookAuthRepository {
 
     fun isAuthorizen() : Boolean
 }
