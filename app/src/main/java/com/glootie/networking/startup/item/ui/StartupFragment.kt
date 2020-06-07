@@ -64,6 +64,7 @@ class StartupFragment : BaseFragment() {
         bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 // React to state change
+                // TODO: 07.06.2020 make animation great again
                 when (newState) {
                     BottomSheetBehavior.STATE_HIDDEN -> {
                         quick_description.setVisible(true)
