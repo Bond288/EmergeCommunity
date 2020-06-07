@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="18dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/budget_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/startup_money_info_budget_title"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="12sp"
+        android:textAllCaps="true"
+        tools:text="БЮДЖЕТ"/>
+
+    <TextView
+        android:id="@+id/budget_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/budget_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/startup_money_info_budget_value"
+        android:textSize="30sp"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="200 R"/>
+
+    <TextView
+        android:id="@+id/budget_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/budget_sum"
+        android:text="@string/startup_money_info_budget_from"
+        android:textSize="12sp"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="Личные \nсредства"/>
+
+    <TextView
+        android:id="@+id/need_money_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/startup_money_info_need_title"
+        android:textSize="12sp"
+        android:textAllCaps="true"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="Нужно"/>
+
+    <TextView
+        android:id="@+id/need_money_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/need_money_title"
+        android:text="@string/startup_money_info_need_value"
+        android:textSize="30sp"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="350т R"/>
+
+    <TextView
+        android:id="@+id/need_money_how"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintLeft_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/need_money_sum"
+        android:text="@string/startup_money_info_need_how"
+        android:textSize="12sp"
+        android:textColor="@color/colorTextPrimary"
+        tools:text="Долевое участие \nдо 30%"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.62" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

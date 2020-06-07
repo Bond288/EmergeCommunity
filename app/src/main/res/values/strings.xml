@@ -16,4 +16,15 @@
     <string name="first_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
     <string name="second_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
     <string name="third_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
+
+    <string name="startup_money_info_budget_title">Бюджет</string>
+    <string name="startup_money_info_budget_value">200 \u20BD</string>
+    <string name="startup_money_info_budget_from">Личные \nсредства</string>
+    <string name="startup_money_info_need_title">Нужно</string>
+    <string name="startup_money_info_need_value">350т \u20BD</string>
+    <string name="startup_money_info_need_how">Долевое участие \nдо 30%</string>
+
+    <string name="startup1_quick_info_money_value">278</string>
+    <string name="startup2_quick_info_money_value">350 000 \u20BD</string>
+    <string name="startup3_quick_info_money_value">250 000 \u20BD</string>
 </resources>
