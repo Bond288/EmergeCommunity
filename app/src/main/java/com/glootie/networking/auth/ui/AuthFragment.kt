@@ -54,44 +54,34 @@ class AuthFragment : BaseFragment() {
 
     private fun loginFacebook() {
         LoginManager.getInstance().logInWithReadPermissions(this, arrayListOf(PERMISSION));
-        LoginManager.getInstance().registerCallback(callbackManager, object: FacebookCallback<LoginResult> {
-            override fun onSuccess(result: LoginResult?) {
-                result ?: return
-            }
-
-            override fun onCancel() {
-            }
-
-            override fun onError(error: FacebookException?) {
-            }
-        })
     }
 
     private fun initScannerButton() {
         scanner.setOnClickListener {
-            val fragmentManager = parentFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            val fragment = TicketScannerFragment()
-            fragmentTransaction.add(R.id.fragment_container_view_tag, fragment)
-            fragmentTransaction.commit()
+            parentFragmentManager.beginTransaction().apply {
+                add(R.id.fragment_container_view_tag, TicketScannerFragment())
+                commit()
+            }
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManager.onActivityResult(requestCode, resultCode, data)
-        isLogin = when (requestCode) {
-            SCAN_TICKET_RESULT_CODE -> resultCode == Activity.RESULT_OK
-            FACEBOOK_LOGIN_RESULT_CODE -> resultCode == Activity.RESULT_OK
-            else -> false
+
+        if (resultCode != Activity.RESULT_OK) {
+            return
         }
 
-        if (isLogin) {
-            val fragmentManager = parentFragmentManager
-            val fragmentTransaction = fragmentManager.beginTransaction()
-            val fragment = StartupListFragment()
-            fragmentTransaction.add(R.id.fragment_container_view_tag, fragment)
-            fragmentTransaction.commit()
+        when (requestCode) {
+            SCAN_TICKET_RESULT_CODE,
+            FACEBOOK_LOGIN_RESULT_CODE -> {
+                viewModel.onAuthCompleted()
+            }
+
+            else -> {
+
+            }
         }
     }
 }

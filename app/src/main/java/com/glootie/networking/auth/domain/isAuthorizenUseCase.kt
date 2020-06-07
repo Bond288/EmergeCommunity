@@ -1,6 +1,8 @@
 package com.glootie.networking.auth.domain
 
-class isAuthorizenUseCase(private val authRepository: AuthRepository) {
+import javax.inject.Inject
 
-    operator fun invoke(): Boolean = authRepository.isAuthorizen()
+class isAuthorizenUseCase @Inject constructor(private val facebookAuthRepository: FacebookAuthRepository) {
+
+    operator fun invoke(): Boolean = facebookAuthRepository.isAuthorizen()
 }
