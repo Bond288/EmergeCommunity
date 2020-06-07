@@ -13,7 +13,8 @@ object DataFactory {
                     "Море алкоголя\n" +
                     "\n" +
                     "Отдохни после длительной конференции, заведи новые связи в формате нашего онлайн-бара!",
-            R.raw.leadersofdigital_demo_afterparty
+            R.raw.leadersofdigital_demo_afterparty,
+            R.string.first_startup_call_link
         ),
         StartupInfo(
             "TatooMasks",
@@ -27,7 +28,8 @@ object DataFactory {
                     "\n" +
                     "<b>На что нужны деньги</b>\n" +
                     "На покупку машинки",
-            R.raw.leadersofdigital_demo_startup_tatoo
+            R.raw.leadersofdigital_demo_startup_tatoo,
+            R.string.second_startup_call_link
         ),
         StartupInfo(
             "MegaPonchik",
@@ -42,7 +44,8 @@ object DataFactory {
                     "\n" +
                     "<b>На что нужны деньги</b>\n" +
                     "На покупку сахара. Нужно больше сахара!",
-            R.raw.leadersofdigital_demo_startup_ponchik
+            R.raw.leadersofdigital_demo_startup_ponchik,
+            R.string.third_startup_call_link
         )
     )
 }

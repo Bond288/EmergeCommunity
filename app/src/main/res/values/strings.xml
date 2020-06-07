@@ -12,4 +12,8 @@
     <string name="ticket_scanner_started">Сканер билета запущен</string>
     <string name="login_title">Инвестиции \nпо любви</string>
     <string name="login_description">Общайтесь, встречайтесь, договаривайтесь. Завершение конференции прекрасное время чтобы себя показать и на других посмотреть.</string>
+
+    <string name="first_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
+    <string name="second_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
+    <string name="third_startup_call_link">https://us04web.zoom.us/j/78435173273?pwd=Y1ZVTXpQNEROR3BmRWlyMDI2RkRlUT09</string>
 </resources>

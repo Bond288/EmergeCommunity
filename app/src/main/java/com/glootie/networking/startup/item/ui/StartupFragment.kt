@@ -1,5 +1,7 @@
 package com.glootie.networking.startup.item.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -11,8 +13,10 @@ import com.glootie.networking.base.view.StartupLayout
 import com.glootie.networking.startup.domain.model.StartupInfo
 import com.glootie.networking.startup.ui.StartupListFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.bottom_sheet_startup.*
 import kotlinx.android.synthetic.main.bottom_sheet_startup.view.*
 import kotlinx.android.synthetic.main.fragment_startup_layout.view.*
+
 
 class StartupFragment : BaseFragment() {
 
@@ -44,6 +48,14 @@ class StartupFragment : BaseFragment() {
         val player = VideoPlayer(view.context, lifecycle)
         view.scene.useController = false
         player.setDataSource(view.scene!!, startupInfo)
+        button_call_developer.setOnClickListener { callDeveloper(getString(startupInfo.callLinkRes)) }
+    }
+
+    private fun callDeveloper(link: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        if (intent.resolveActivity(activity!!.packageManager) != null) {
+            startActivity(intent)
+        }
     }
 
     private fun onEvent(event: StartupLayout.MoveEvent) {
